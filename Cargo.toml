@@ -1,0 +1,2 @@
+[workspace]
+members = ["rust_md_cli","rust_md_format","rust_md_parse"]
