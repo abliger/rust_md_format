@@ -1,7 +1,6 @@
-
 pub mod parse_block {
 
-    use rust_md_parse::block;
+    use rust_md_parse::parse::block;
     #[test]
     fn parse_head() {
         let head = [

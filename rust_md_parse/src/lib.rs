@@ -1,14 +1,3 @@
-//#![feature(prelude_import)]
-
-#[cfg(not(feature = "regex"))]
-pub mod grammer;
-#[cfg(feature = "regex")]
-pub mod regex;
-
-pub mod prelude;
-
-
-//#[prelude_import]
-#[feature(prelude_import)]
-#[allow(unused)]
-pub use prelude::*;
+#[cfg_attr(feature = "regex", path = "regex/mod.rs")]
+#[cfg_attr(feature = "grammer", path = "grammer/mod.rs")]
+pub mod parse;
