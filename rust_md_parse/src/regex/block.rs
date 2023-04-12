@@ -22,40 +22,41 @@ pub struct Head<'a> {
 
 #[cfg(test)]
 mod test {
-    use crate::block::parse_head;
+    use super::*;
 
     #[test]
     fn parse_head_test() {
+        println!("TEST");
         assert_eq!(
-            crate::block::Head {
+            Head {
                 level: 3,
-                content: "test"
+                content: "tests"
             },
-            parse_head("### test").unwrap()
+            parse_head("### tests").unwrap()
         );
         assert_eq!(
-            crate::block::Head {
+            Head {
                 level: 3,
-                content: "test"
+                content: "tests"
             },
-            parse_head("### test        ").unwrap()
+            parse_head("### tests        ").unwrap()
         );
         assert_eq!(
-            crate::block::Head {
+            Head {
                 level: 3,
-                content: "test"
+                content: "tests"
             },
-            parse_head("   ### test        ").unwrap()
+            parse_head("   ### tests        ").unwrap()
         );
         assert_eq!(
-            crate::block::Head {
+            Head {
                 level: 3,
-                content: "test"
+                content: "tests"
             },
-            parse_head("   ###   test        ").unwrap()
+            parse_head("   ###   tests        ").unwrap()
         );
         assert_eq!(None, parse_head(""));
-        assert_eq!(None, parse_head("#test"));
-        assert_eq!(None, parse_head("test# test"));
+        assert_eq!(None, parse_head("#tests"));
+        assert_eq!(None, parse_head("tests# tests"));
     }
 }

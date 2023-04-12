@@ -2,8 +2,9 @@
 name = "rust_md_parse"
 version = "0.1.0"
 edition = "2021"
-
+[features]
+default=["regex"]
+regex =[]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 regex = "1.7.1"
